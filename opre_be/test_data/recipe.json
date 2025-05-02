@@ -1,0 +1,112 @@
+{
+  "recipe": [
+    {
+      "owner": "mexitalyco123",
+      "title": "Fast Chicken Chili",
+      "by": "Phoebe Noce",
+      "video_link": "https://www.youtube.com/",
+      "thumbnail_link": "https://www.google.com/",
+      "ingredients": [
+        {
+          "name": "Boneless Skinless Chicken Breast",
+          "quantity": "1",
+          "unit": "lb",
+          "prep": "cut into bite-sized pieces",
+          "optional": false,
+          "ingredient_id": 101,
+          "thumbnail_url": "",
+          "brand": ""
+        },
+        {
+          "name": "Salt",
+          "quantity": "3/4",
+          "unit": "teaspoon",
+          "prep": "divided",
+          "optional": false,
+          "ingredient_id": 102,
+          "thumbnail_url": "",
+          "brand": ""
+        },
+        {
+          "name": "Vertically Sliced Onion",
+          "quantity": "0.5",
+          "unit": "cup",
+          "prep": "",
+          "optional": false,
+          "ingredient_id": 103,
+          "thumbnail_url": "",
+          "brand": ""
+        },
+        {
+          "name": "Ground Cumin",
+          "quantity": "2",
+          "unit": "teaspoons",
+          "prep": "",
+          "optional": false,
+          "ingredient_id": 104,
+          "thumbnail_url": "",
+          "brand": ""
+        },
+        {
+          "name": "Cilantro Leaves",
+          "quantity": "0.25",
+          "unit": "cup",
+          "prep": "",
+          "optional": true,
+          "ingredient_id": 105,
+          "thumbnail_url": "",
+          "brand": ""
+        }
+      ],
+      "directions": {
+        "text": "Heat a Dutch oven over medium-high heat. Add oil. Sprinkle chicken with 1/4 teaspoon salt. Add chicken; sauté 4 minutes. Add onion, garlic, cumin, coriander, oregano and red pepper; sauté 3 minutes. Add 2 cups beans, water, 1/2 teaspoon salt, 1 can chiles and broth; bring to a boil. Mash 1 cup beans and 1 can chiles in a bowl. Add to soup; simmer 5 minutes. Serve with cilantro and lime.",
+        "steps": [
+          {
+            "step_number": 1,
+            "start_time": "00:00:01,000",
+            "end_time": "00:00:07,000",
+            "text": "Heat a Dutch oven over medium-high heat. Add oil."
+          },
+          {
+            "step_number": 2,
+            "start_time": "00:00:07,001",
+            "end_time": "00:00:12,000",
+            "text": "Sprinkle chicken with 1/4 teaspoon salt. Add chicken; sauté 4 minutes."
+          },
+          {
+            "step_number": 3,
+            "start_time": "00:00:12,001",
+            "end_time": "00:00:18,000",
+            "text": "Add onion, garlic, cumin, coriander, oregano and red pepper; sauté 3 minutes."
+          },
+          {
+            "step_number": 4,
+            "start_time": "00:00:18,001",
+            "end_time": "00:00:23,000",
+            "text": "Add 2 cups beans, water, 1/2 teaspoon salt, 1 can chiles and broth; bring to a boil."
+          },
+          {
+            "step_number": 5,
+            "start_time": "00:00:23,001",
+            "end_time": "00:00:26,000",
+            "text": "Mash 1 cup beans and 1 can chiles in a bowl."
+          },
+          {
+            "step_number": 6,
+            "start_time": "00:00:26,001",
+            "end_time": "00:00:30,000",
+            "text": "Add to soup; simmer 5 minutes."
+          },
+          {
+            "step_number": 7,
+            "start_time": "00:00:30,001",
+            "end_time": "00:00:34,000",
+            "text": "Serve with cilantro and lime."
+          }
+        ]
+      },
+      "date_created": "1251234",
+      "date_updated": "241243"
+    }
+  ]
+}
