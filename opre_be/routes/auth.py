@@ -131,12 +131,14 @@ def login():
 
     if bcrypt.checkpw(password.encode('utf-8'), user_credential['hashed_password'].encode('utf-8')):
         user_id = user_credential['id']
+        username = user_credential['name']
         payload = {
             'user_id': user_id,
+            'username': username,
             'exp': datetime.now(timezone.utc) + timedelta(days=1)
         }
         token = jwt.encode(payload, current_app.config['JWT_SECRET_KEY'], algorithm='HS256')
-        return jsonify({'user_id': user_id, 'access_token': token})
+        return jsonify({'user_id': user_id, 'username': username, 'access_token': token})
     else:
         return jsonify({'message': 'Invalid email or password'}), 401
 

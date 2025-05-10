@@ -1,27 +1,31 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from 'react-redux';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { decodeJwt } from "jose";
 import "./Login.css";
+import { setAuthenticated } from "../../slices/authSlice";
 
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
-  const [authenticated, setAuthenticated] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const token = localStorage.getItem("access_token");
-    if (token) {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (token && user) {
       try {
         const decoded = decodeJwt(token);
         const now = Math.floor(Date.now() / 1000);
         if (decoded.exp > now) {
-          setAuthenticated(true);
+          dispatch(setAuthenticated(res.data.user));
           navigate("/home");
         } else {
           localStorage.removeItem("access_token");
+          localStorage.removeItem("user");
         }
       } catch (err) {
         console.error("Invalid token", err);
@@ -43,9 +47,12 @@ const Login = () => {
         withCredentials: true
       });
 
+      console.log("###: ", res.data)
+
       const token = res.data.access_token;
       if (token) {
         localStorage.setItem("access_token", token);
+        dispatch(setAuthenticated(res));
       }
 
       setSuccess("Login successful! Welcome user #" + (res.data.user_id || ""));

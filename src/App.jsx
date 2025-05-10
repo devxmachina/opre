@@ -8,7 +8,10 @@ import { setAuthenticated } from './slices/authSlice';
 import RegisterForm from './Pages/RegisterForm/RegisterForm';
 import Login from './Pages/Login/Login';
 import Home from './Pages/Home/Home';
+import NavTop from './Components/NavTop/NavTop';
+
 import PrivateRoute from './routes/PrivateRoute';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -19,18 +22,25 @@ function App() {
   }, [dispatch]);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/register" element={<RegisterForm />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/home" element={
-          <PrivateRoute>
-            <Home />
-          </PrivateRoute>
-        } />
-        <Route path="*" element={<Login />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <div>
+        <NavTop></NavTop>
+      </div>
+      <div>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/register" element={<RegisterForm />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/home" element={
+              // <PrivateRoute>
+                <Home />
+              // </PrivateRoute>
+            } />
+            <Route path="*" element={<Login />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </>
   );
 }
 

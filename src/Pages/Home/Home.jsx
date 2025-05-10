@@ -5,8 +5,12 @@ import LogoutButton from '../../Components/LogoutButton/LogoutButton';
 function Home() {
   return(
     <>
-    HOME - You are logged in!
-    <LogoutButton />
+    <div>
+      HOME - You are logged in!
+    </div>
+    <div>
+      <LogoutButton />
+    </div>
     </>
   )
 }

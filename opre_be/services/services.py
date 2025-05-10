@@ -29,12 +29,16 @@ def get_user_id_and_password(email):
     with current_app.database.connect() as conn:
         row = conn.execute(text(
             """
-            SELECT id, password
+            SELECT id, name, password
             FROM users
             WHERE email = :email
             """
         ), {'email': email}).mappings().fetchone()
-        return {'id': row['id'], 'hashed_password': row['password']} if row else None
+        return {
+          'id': row['id'],
+          'name': row['name'],
+          'hashed_password': row['password']
+        } if row else None
 
 
 def print_all_users():
@@ -134,20 +138,3 @@ def get_timeline(user_id):
     'user_id' : tweet['user_id'],
     'tweet'   : tweet['tweet']
   } for tweet in timeline]
-
-def get_user_id_and_password(email):
-  with current_app.database.connect() as conn:
-    row = conn.execute(text(
-      """
-        SELECT
-          id,
-          password
-        FROM users
-        WHERE email = :email
-      """
-    ), {'email': email}).mappings().fetchone()
-
-    return {
-      'id': row['id'],
-      'hashed_password': row['password']
-    } if row else None
